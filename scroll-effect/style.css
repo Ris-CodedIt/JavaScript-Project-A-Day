@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(64, 64, 247);
+  color: rgb(143, 240, 207);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.box {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  transform: translateX(400%);
+  transition: transform 0.7s;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+@media (min-width: 600px) {
+  .box {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .box {
+    width: 30%;
+    height: 200px;
+  }
+}
