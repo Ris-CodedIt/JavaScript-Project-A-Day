@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #012a36;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  background-color: #bcf8ec;
+  border: 2px solid rgb(243, 206, 138);
+}
+
+.fill {
+  background-image: url("./pexels-ray-piedra-1478442.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 145px;
+  height: 145px;
+  cursor: pointer;
+}
+.hold {
+  border: 2px solid gray;
+}
+.hovered {
+  background-color: #a19c9c;
+  border: 2px dashed rgb(54, 53, 53);
+}
+
+@media (min-width: 800px) {
+  body {
+    flex-direction: row;
+  }
+}
