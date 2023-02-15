@@ -1,0 +1,124 @@
+/* @import url(../fonts/Roboto/Roboto-Regular.ttf); */
+
+:root{
+    --other-width: 25%;
+    --hover-width: 75%
+}
+
+*{
+    box-sizing: border-box ;
+}
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.split.left{
+    left:0;
+    background-image: url(./img/restaurant.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.split.right{
+    right: 0;
+    background-image: url(./img/bar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* overlays section */
+
+.split.left::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(7, 65, 112, 0.6);
+}
+
+
+.split.right::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(25, 26, 27, 0.6);
+}
+
+h1{
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: background-color,border-radius 0.5s;
+}
+
+.split.left .btn:hover{
+    background-color: rgb(71, 116, 153) ;
+    border-radius: 10px;
+}
+.split.right .btn:hover{
+    background-color: rgba(25, 26, 27, 1) ;
+    border-radius: 10px;
+}
+
+
+.container.hover-left .split.left{
+  width: var(--hover-width)
+}
+
+.container.hover-left .split.right{
+    width: var(--other-width)
+  }
+
+.container.hover-right .split.right{
+    width: var(--hover-width)
+  }
+
+.container.hover-right .split.left{
+    width: var(--other-width)
+  }
+
+ .split.left, .split.left::before, .split.right , .split.right::before{
+    transition: width 0.7s;
+    transition-delay: 0.2s;
+ }
